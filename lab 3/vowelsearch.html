@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>word search</title>
+</head>
+<body>
+	<script type="text/javascript">
+		word=prompt("enter word ");
+		start=word.indexOf('a');
+		end=word.lastIndexOf('a');
+		sub =word.substring(start+1,end);
+		document.write("first index of a "+start);
+		document.write("<br/>")
+		document.write("last index of a "+end);
+		document.write("<br/>")
+		document.write("substring: "+sub);
+	</script>
+</body>
+</html>

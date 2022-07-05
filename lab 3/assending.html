@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>asd</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var a=new Array();
+		n=parseInt(prompt("enter size"));
+
+		for(i=0;i<n;i++){
+			a[i]=prompt();
+		}
+		for(i=0;i<n-1;i++){
+			for(j=i+1;j<n;j++){
+				if(a[i]>a[j]){
+					temp=a[i];
+					a[i]=a[j];
+					a[j]=temp;
+				}
+			}
+		}
+		for(i=0;i<n;i++){
+			document.write(a[i]+"<br/>");
+			console.log(a[i]);
+		}
+	</script>
+</body>
+</html>

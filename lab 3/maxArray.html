@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>max</title>
+</head>
+<body>
+		<script type="text/javascript">
+			var a=new Array();
+			n=parseInt(prompt("enter size"));
+			for(i=0;i<n;i++){
+				a[i]=prompt();
+			}
+			max=a[0];
+			for(j=0;j<n;j++){
+				if(max<a[j]){
+					max=a[j];
+				}
+			}
+			document.write(max);
+			
+		</script>
+</body>
+</html>
