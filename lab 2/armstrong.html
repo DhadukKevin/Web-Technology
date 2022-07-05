@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>armstrong</title>
+</head>
+<body>
+	<script type="text/javascript">
+		n=parseInt(prompt("enetr number"));
+		b=n;
+		sum=0;
+		while(n!=0){
+			a=(n%10);
+			sum=sum+(a*a*a);
+			n=parseInt(n/10);
+		}
+		if(b==sum){
+			document.write(b + "  is a armstrong number");
+		}
+		else{
+			document.write(b + "  is not a armstrong number");
+		}
+
+	</script>
+</body>
+</html>
