@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>present</title>
+</head>
+<style type="text/css">
+
+</style>
+<body>
+	<button onclick="allCheck(this)">Check All</button>
+		<button onclick="allCheck(this)">Uncheck All</button>
+		<br>
+		<h1 style="position: fixed; margin-top: 50px; margin-left: 400px;"></h1>
+		<div style="width: 600px; border: 1px solid black; height: 400px; position: fixed; margin-top: 100px; margin-left: 600px;" id="div1"></div>
+		
+
+	<script type="text/javascript">
+
+
+		for(i=101;i<=165;i++){
+			document.write("<input type=\"checkbox\" name=\"input\" onclick=\"verify()\" value=\""+i+"\">"+i+"</br> ")
+		}
+		for(i=201;i<=285;i++){
+			document.write("<input type=\"checkbox\" name=\"input\" onclick=\"verify()\" value=\""+i+"\">"+i+"</br> ")
+		}
+		for(i=301;i<=363;i++){
+			document.write(`<input type="range" name="input" onclick="verify()" value="`+i+`">`+i+`</br>` )
+		}
+		d=document.getElementById("div1");
+		c=document.getElementsByTagName("input");
+		function allCheck(n){
+			if(n.innerHTML=="Check All"){
+				for(i=0;i<c.length;i++){
+					c[i].checked="checked";
+				}
+			}
+			else{
+				for(i=0;i<c.length;i++){
+					c[i].checked=false;
+				}
+			}
+		}
+		function verify(){
+			a="";
+			for(i=0;i<c.length;i++){
+					if(c[i].checked==false){
+						a+=c[i].value+",";
+						d.innerHTML=a.substr(0,a.length-1);
+					}
+				}
+		}
+	</script>
+</body>
+</html>
