@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>simple clc</title>
+	<style type="text/css">
+		#display1{
+			margin: 2em;
+		}
+		#display2{
+			margin: 2em;
+		}
+		#display{
+			margin: 2em;
+		}
+		input[type="button"]{
+			margin: 30px;
+			height: 30px;
+			width: 30px;
+		}
+	</style>
+</head>
+<body>
+	Value 1: <input type="text" id="display1" name=""></br>
+	Value 2: <input type="text" id="display2" name=""><br>
+	
+
+	<input type="button" value="+" name="" onclick="sol(this)">
+	<input type="button" value="-" name="" onclick="sol(this)">
+	<input type="button" value="*" name="" onclick="sol(this)">
+	<input type="button" value="/" name="" onclick="sol(this)"><br>
+
+	<script type="text/javascript">
+		
+
+		function sol(val){
+			var n1=document.getElementById("display1").value;
+			var n2=document.getElementById("display2").value;
+			var n=document.getElementById("display");
+			var opr=val.value;
+
+			if(opr=="+"){
+				var temp=parseInt(n1)+parseInt(n2);
+			}
+			else if(opr=="-"){
+				var temp=parseInt(n1)-parseInt(n2);
+			}
+			else if(opr=="/"){
+				var temp=parseInt(n1)/parseInt(n2);
+			}
+			else if(opr=="*"){
+				var temp=parseInt(n1)*parseInt(n2);
+			}
+			n.value=temp;
+			console.log(temp);
+			
+
+		}
+	</script>
+	Ans    : <input type="text" id="display" name=""><br>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculater</title>
+
+	<style>
+		*{
+			box-sizing: border-box;
+		}
+		div{
+
+			display: flex ;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			height: 100vh;
+			font-weight: 800;
+		}
+		table tr td input{
+			background: #AFAFAF;
+			padding: 2em;
+			border-radius: 25px;
+			margin: 1em;
+		}
+		input[type="text"]
+		{
+			width: 80%;
+			background: white;
+			font-size: 100%;
+		}
+		#last input{
+			width: 40%;
+		}
+	</style>
+</head>
+<body>
+<div>
+	<form>
+	<table border="1">
+		<tr>
+			<td colspan="4">
+				
+				<input type="text" id="display1" name="">
+			</td>
+		</tr>
+		<tr id="last">
+			<td colspan="4"><input type="button" value="AC" onclick="ac()">
+				<input type="button" value="DEL" name="" onclick="del()"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="7" onclick="dis(this)"></td>
+			<td><input type="button" value="8" onclick="dis(this)"></td>
+			<td><input type="button" value="9" onclick="dis(this)"></td>
+			<td><input type="button" value="+" onclick="operation(this)"></td>		
+		</tr>
+
+		<tr>
+			<td><input type="button" value="4" onclick="dis(this)"></td>
+			<td><input type="button" value="5" onclick="dis(this)"></td>
+			<td><input type="button" value="6" onclick="dis(this)"></td>
+			<td><input type="button" value="-" onclick="operation(this)"></td>		
+		</tr>
+		<tr>
+			<td><input type="button" value="1" onclick="dis(this)"></td>
+			<td><input type="button" value="2" onclick="dis(this)"></td>
+			<td><input type="button" value="3" onclick="dis(this)"></td>
+			<td><input type="button" value="*" onclick="operation(this)"></td>		
+		</tr>
+		
+		<tr>
+			<td><input type="button" value="/" onclick="operation(this)"></td>
+			<td><input type="button" value="0" onclick="dis(this)"></td>
+			<td><input type="button" value="." onclick="dis(this)"></td>
+			<td><input type="button" value="=" onclick="solution()"></td>		
+		</tr>
+
+		
+
+	</table>
+</form>
+</div>
+<script>
+        var oldValue =0;
+        var opr="";
+        function dis(val){
+            temp=document.getElementById("display1");
+            temp.value+=val.value;
+            
+        }
+        function operation(op){
+            temp=document.getElementById("display1");
+            oldValue = temp.value;
+            opr= op.value;
+            temp.value="";
+        }
+
+        function solution(){
+           temp=document.getElementById("display1");
+           newValue = temp.value;
+
+           if(opr=="+"){
+            ans=parseInt(newValue)+parseInt(oldValue);
+           }
+           else if(opr=="-"){
+            ans=parseInt(oldValue)-parseInt(newValue);
+           }
+           else if(opr=="/"){
+            ans=parseInt(oldValue)/parseInt(newValue);
+           }
+           else if(opr=="*"){
+            ans=parseInt(newValue)*parseInt(oldValue);
+           }
+           temp.value=ans;
+           newValue="";
+           oldValue="";
+        }
+        function ac(){
+        	temp=document.getElementById("display1");
+            newValue ="";
+            oldValue="";
+            opr="";
+            temp.value="";
+        }
+        function del(){
+        	temp=document.getElementById("display1");
+        	var temp2=temp.value;
+        	temp.value=temp2.substring(0,temp2.length-1);
+        	console.log(temp.value);
+        }
+    </script>
+</body>
+</html>

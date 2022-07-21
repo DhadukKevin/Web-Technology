@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>login</title>
+	<style type="text/css">
+		input{
+			margin: 10px;
+		}
+		input[type="password"]{
+			margin-left: 17px;
+		}
+	</style>
+</head>
+<body>
+	User Name: <input type="text" id="name" name=""><br>
+	Password : <input type="password" id="pass" name="">
+	<input type="button" value="show" onclick="togglePass()" id="toggleBtn"/><br>
+	<input type="button" value="login" name="" onclick="login()">
+
+	<script type="">
+
+		function login(){
+			var un = document.getElementById("name");
+			var ps = document.getElementById("pass");
+
+			if(un.value=="kevin" && ps.value=="12345"){
+				alert("valid user");
+			}	
+			else{
+				alert("invalid user");
+			}
+		}
+		function togglePass(){
+			 var v1=document.getElementById("pass");
+			 var v2=document.getElementById("toggleBtn");
+
+			if(v1.type=="text"){
+				v1.type="password";	
+				v2.value="show";
+			}
+			else{
+				v1.type="text";
+				v2.value="hide";
+			}
+		}
+		
+	</script>
+</body>
+</html>
